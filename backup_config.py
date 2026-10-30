@@ -5,7 +5,7 @@ from glob import glob
 from difflib import unified_diff
 
 files  = sorted(glob('backup_*.txt'))
-# handles the IndexError occurring at the beginning where no backup_files created 
+
 if files:
     previous_file = files.pop()
 else:
@@ -24,9 +24,9 @@ connection_info = {
     'device_type':'linux',
     }
 
-# ConnectHandler(host='192.168.1.1', username='admin', password='password', device_type='cisco_ios')
-with ConnectHandler(**connection_info) as connection: # ** means dictionary unpacking, instead of the upove
-    output = connection.send_command("cat /etc/hostname")
+
+with ConnectHandler(**connection_info) as connection:
+    output = connection.send_command("cat /home/netadmin/config.txt")
     with open(file_path, 'w') as file:
         file.write(output)
 

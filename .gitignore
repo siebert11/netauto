@@ -1,3 +1,4 @@
 backup_*.txt
 .vscode/
-__pycashe__/
+__pycache__/
+.venv/
